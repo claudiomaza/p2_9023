@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control Epidemiológico del Dengue</title>
+</head>
+<body>
+    <h1>Casos de Dengue Registrados</h1>
+    <ul>
+        {% for caso in casos %}
+            <li>
+                Paciente: {{ caso.paciente.nombre }}<br>
+                Edad: {{ caso.paciente.edad }}<br>
+                Dirección: {{ caso.paciente.direccion }}<br>
+                Barrio: {{ caso.paciente.barrio }}<br>
+                Tipo: {{ caso.tipo }}<br>
+                Fecha de Diagnóstico: {{ caso.fecha_diagnostico }}
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('main.registrar') }}">Registrar Nuevo Caso</a>
+</body>
+</html>

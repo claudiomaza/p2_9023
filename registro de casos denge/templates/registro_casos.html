@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Registrar Nuevo Caso</h1>
+{% if error %}
+    <div class="alert alert-danger">{{ error }}</div>
+{% endif %}
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <p>{{ form.dni.label }} {{ form.dni() }}</p>
+    <p>{{ form.nombre.label }} {{ form.nombre() }}</p>
+    <p>{{ form.apellido.label }} {{ form.apellido() }}</p>
+    <p>{{ form.fecha_nacimiento.label }} {{ form.fecha_nacimiento() }}</p>
+    <p>{{ form.edad.label }} {{ form.edad() }}</p>
+    <p>{{ form.sexo.label }} {{ form.sexo() }}</p>
+    <p>{{ form.calle.label }} {{ form.calle() }}</p>
+    <p>{{ form.numero.label }} {{ form.numero() }}</p>
+    <p>{{ form.barrio.label }} {{ form.barrio() }}</p>
+    <p>{{ form.localidad.label }} {{ form.localidad() }}</p>
+    <p>{{ form.departamento.label }} {{ form.departamento() }}</p>
+    <p>{{ form.codigo_postal.label }} {{ form.codigo_postal() }}</p>
+    <p>{{ form.telefono.label }} {{ form.telefono() }}</p>
+    <p>{{ form.correo.label }} {{ form.correo() }}</p>
+    <p>{{ form.grupo.label }} {{ form.grupo() }}</p>
+    <p>{{ form.ingresa_con_vida.label }} {{ form.ingresa_con_vida() }}</p>
+    <p>{{ form.submit() }}</p>
+</form>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const fechaNacimientoField = document.getElementById('fecha_nacimiento');
+        const edadField = document.getElementById('edad');
+
+        fechaNacimientoField.addEventListener('change', function () {
+            const fechaNacimiento = new Date(fechaNacimientoField.value);
+            const today = new Date();
+            let edad = today.getFullYear() - fechaNacimiento.getFullYear();
+            const monthDiff = today.getMonth() - fechaNacimiento.getMonth();
+
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < fechaNacimiento.getDate())) {
+                edad--;
+            }
+
+            edadField.value = edad;
+        });
+    });
+</script>
+{% endblock %}

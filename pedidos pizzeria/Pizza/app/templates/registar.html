@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Caso de Dengue</title>
+</head>
+<body>
+    <h1>Registrar Caso de Dengue</h1>
+    <form action="{{ url_for('main.registrar') }}" method="post">
+        <label for="nombre">Nombre Completo:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" name="edad" required><br>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required><br>
+        <label for="barrio">Barrio:</label>
+        <input type="text" id="barrio" name="barrio" required><br>
+        <label for="tipo">Tipo de Caso:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="A">Dengue sin signos de alarma ni comorbilidades</option>
+            <option value="B">Dengue sin signos de alarma con comorbilidades o riesgo social</option>
+            <option value="C">Dengue con signos de alarma</option>
+        </select><br>
+        <button type="submit">Registrar</button>
+    </form>
+</body>
+</html>
