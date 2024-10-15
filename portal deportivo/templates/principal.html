@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interacción de Logos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100%;
+            width: 100%;
+        }
+
+        .half {
+            flex: 1;
+            position: relative;
+            transition: flex 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .half img {
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .half .info {
+            display: none;
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        .eurocopa {
+            background-color: #649bcef0; /* Color representativo de la Eurocopa */
+        }
+
+        .copa-america {
+            background-color: #da291cea; /* Color representativo de la Copa América */
+        }
+
+        .half:hover {
+            flex: 2;
+            cursor: pointer;
+        }
+
+        .half:hover .info {
+            display: block;
+        }
+
+    </style>
+    <div class="container">
+        <div class="half eurocopa" id="eurocopa">
+            <img src="{{ url_for('static', filename='eurocopa.png') }}" alt="Eurocopa Logo">
+        </div>
+        <div class="half copa-america" id="copa-america">
+            <img src="{{ url_for('static', filename='conmebol.png') }}" alt="Copa América Logo">
+        </div>
+    </div>
+    <script>
+        document.getElementById('eurocopa').onclick = function() {
+            window.location.href = "{{ url_for('seleccion') }}";
+        }
+
+        document.getElementById('copa-america').onclick = function() {
+            window.location.href = "{{ url_for('seleccion') }}";
+        }
+    </script>
+</body>
+</html>

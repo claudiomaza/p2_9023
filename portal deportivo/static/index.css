@@ -1,0 +1,27 @@
+/* Asegúrate de que este CSS esté en el archivo /static/index.css */
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; /* Espacio entre las imágenes */
+    justify-content: space-around; /* Distribuye uniformemente las imágenes */
+    padding: 20px;
+}
+
+.news-container a {
+    flex: 1 1 200px; /* Ajusta el tamaño de las imágenes en función del espacio disponible */
+    max-width: 300px; /* Tamaño máximo de las imágenes */
+    text-align: center;
+    display: block; /* Asegura que las imágenes se alineen correctamente */
+}
+
+.news-container img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho del enlace */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 8px; /* Opcional: redondea los bordes de la imagen */
+    transition: transform 0.3s ease; /* Agrega una transición suave */
+}
+
+.news-container img:hover {
+    transform: scale(1.05); /* Efecto de zoom al pasar el mouse */
+}

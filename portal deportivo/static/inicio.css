@@ -1,0 +1,69 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.centered {
+    text-align: center;
+    padding: 50px; /* Espacio alrededor del contenido centrado */
+}
+
+.explore-button {
+    text-align: center;
+    margin: 50px 0; /* Espacio arriba y abajo del botón */
+}
+
+.my-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #007BFF;
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.my-button:hover {
+    background-color: #0056b3;
+}
+
+.login-form {
+    margin-top: 100px; /* Espacio arriba del formulario para separarlo del contenido superior */
+    text-align: center;
+}
+
+form {
+    display: inline-block;
+    text-align: left;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    margin-top: 5px; /* Ajusta este valor para mover el formulario hacia abajo */
+}
+
+form input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #218838;
+}
