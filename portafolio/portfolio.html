@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio de Claudio Maza</title>
+  <!-- Enlazar Bootstrap y FontAwesome -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="css/portfolio-style.css">
+</head>
+<body>
+  
+  <!-- Navegación -->
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top" id="navbar">
+    <a class="navbar-brand" href="#welcome-section">Claudio Maza</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#miNavegacion" aria-controls="miNavegacion" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="miNavegacion">
+      <ul class="navbar-nav">
+        <li class="nav-item mr-3"><a class="nav-link" href="#welcome-section"><i class="fa fa-home" aria-hidden="true"></i> Inicio</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="#projects"><i class="fa fa-folder" aria-hidden="true"></i> Portafolio</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="#sobreMi"><i class="fa fa-user" aria-hidden="true"></i> Sobre Mí</a></li>
+        <li class="nav-item mr-3"><a class="nav-link" href="#contacto"><i class="fa fa-envelope" aria-hidden="true"></i> Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Sección de Bienvenida -->
+  <header class="hero-image" id="welcome-section">
+    <div class="container-fluid h-100">
+      <div class="row h-100">
+        <div class="col-md-12 my-auto mx-auto text-center">
+          <h1 class="text-white display-3"><strong>Diseño y Desarrollo Web</strong></h1>
+          <p class="text-white lead"><strong>Calidad, responsabilidad y siempre al día en las últimas tecnologías en diseño y desarrollo web</strong></p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Sección de Proyectos -->
+  <section id="projects" class="container py-5">
+    <h2 class="my-5 text-dark">Portafolio</h2>
+    <div class="row">
+        <!-- Tarjeta 1 -->
+        <div class="col-md-4">
+            <div class="card efecto my-3">
+                <img class="card-img-top" src="https://via.placeholder.com/400x300" alt="Proyecto 1">
+                <div class="card-body project-tile">
+                    <h5 class="project-tile">Proyecto 1</h5>
+                    <a href="#" target="_blank" class="btn btn-outline-secondary btn-lg btn-block">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta 2 -->
+        <div class="col-md-4">
+            <div class="card efecto my-3">
+                <img class="card-img-top" src="https://via.placeholder.com/400x300" alt="Proyecto 2">
+                <div class="card-body project-tile">
+                    <h5 class="project-tile">Proyecto 2</h5>
+                    <a href="#" target="_blank" class="btn btn-outline-secondary btn-lg btn-block">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta 3 -->
+        <div class="col-md-4">
+            <div class="card efecto my-3">
+                <img class="card-img-top" src="https://via.placeholder.com/400x300" alt="Proyecto 3">
+                <div class="card-body project-tile">
+                    <h5 class="project-tile">Proyecto 3</h5>
+                    <a href="#" target="_blank" class="btn btn-outline-secondary btn-lg btn-block">Ver Proyecto</a>
+                </div>
+            </div>
+        </div>
+        <!-- Tarjeta 4, y puedes seguir agregando -->
+    </div>
+</section>
+
+  <!-- Sección Sobre Mí -->
+  <section id="sobreMi" class="bg-light container py-5">
+    <h2 class="my-5 text-dark">Sobre Mí</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Hola, soy Claudio Maza</h3>
+        <p>Desarrollador web con experiencia en HTML, CSS y Python. Me estoy actualizando constantemente</p>
+      </div>
+      <div class="col-md-6">
+        <h3>Mis Habilidades</h3>
+        <p>HTML, CSS, Python, SQL, entre otras.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="container py-5">
+    <h2 class="my-5 text-dark">Contacto</h2>
+    <form id="contact-form">
+        <div class="form-group">
+            <input type="text" class="form-control" name="nombre" placeholder="Tu Nombre" required>
+        </div>
+        <div class="form-group">
+            <input type="email" class="form-control" name="correo" placeholder="Tu Correo" required>
+        </div>
+        <div class="form-group">
+            <textarea class="form-control" name="mensaje" rows="5" placeholder="Tu Mensaje" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-secondary btn-block">Enviar</button>
+    </form>
+</section>
+
+<!-- Include EmailJS SDK -->
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  (function(){
+    emailjs.init("PSYIBdUi-BYv6wNmr"); // Tu User ID
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evita el envío por defecto
+
+    emailjs.sendForm('service_el947xs', 'template_npdr4fr', this)
+      .then(function() {
+        alert('Mensaje enviado exitosamente!');
+      }, function(error) {
+        alert('Error al enviar el mensaje: ' + JSON.stringify(error));
+      });
+  });
+</script>
+  <!-- Enlazar JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/portfolio-scripts.js"></script>
+</body>
+</html>
